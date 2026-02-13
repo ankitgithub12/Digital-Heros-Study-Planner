@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = 'http://localhost:5000/api/plans';
+const API_URL = 'https://digital-heros-backend.onrender.com/api/plans';
 
 const testPlan = {
   goalName: 'Test Plan',

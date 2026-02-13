@@ -7,7 +7,7 @@ const HF_API_URL = 'https://router.huggingface.co/models/mistralai/Mistral-7B-In
 
 router.post('/generate', async (req, res) => {
   const { prompt } = req.body;
-  const token = process.env.VITE_HF_API_TOKEN;
+  const token = process.env.HF_API_TOKEN;
   console.log('AI Request received. Token present:', !!token);
 
   if (!token) {
@@ -37,6 +37,7 @@ router.post('/generate', async (req, res) => {
       }
     );
 
+    console.log('HF API response shape:', Array.isArray(response.data) ? 'array' : typeof response.data);
     res.json(response.data);
   } catch (error) {
     console.error('AI Generation Error Full:', error);

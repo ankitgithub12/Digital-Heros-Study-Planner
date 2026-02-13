@@ -32,7 +32,7 @@ app.get('/api/health', (req, res) => {
 // For future AI proxying if needed to hide HF token
 app.get('/api/config', (req, res) => {
   res.json({
-    aiEnabled: !!process.env.VITE_HF_API_TOKEN,
+    aiEnabled: !!process.env.HF_API_TOKEN,
   });
 });
 
